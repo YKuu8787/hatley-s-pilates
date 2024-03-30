@@ -1,0 +1,37 @@
+.o-burger
+  flex-shrink: 0
+  margin-left: 1vw
+  display: flex
+  justify-content: center
+  align-items: center
+  +size(3.6rem)
+  border: 1px solid var(--color-gray)
+  cursor: pointer
+  transition: 0.5s
+  &:hover
+    border-color: var(--color-primary)
+    *::before, *::after
+      // border-color: var(--color-primary)
+      background-color: var(--color-primary)
+      transition: 0.3s
+  // &:hover &__lines
+  //     &::before, &::after
+  //       background-color: var(--color-primary)
+  &__lines
+    &::before, &::after
+      content: ''
+      display: block
+      // width: 2.4rem
+      // border-top: 1px solid var(--color-gray)
+      +size(2.4rem, 1px)
+      background-color: var(--color-gray)
+    &::after
+      width: 1.6rem
+      margin-top: 0.8rem
+
+// o的物件會單獨拉出來做在objects的資料夾裡面，命名_burger.sass，記得要引入在style.sass裡面 
+// 設定flex-shrink: 0  避免被壓縮
+// 使用 before after 做出線條，不能設定display:flex，這樣線條會變成平行，所以再給他一個class='o-burger__lines'
+// before after 一定要給 content
+// &:hover 裡要放一次 變色，*::before, *::after 裡面也要，不能直接& 會選到&:hover
+// transition: 0.5s 要加在&:hover 和 *::before, *::after 裡面

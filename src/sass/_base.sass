@@ -1,0 +1,100 @@
+*
+  position: relative
+  box-sizing: border-box
+
+html
+  // 10px
+  font-size: calc(16px / 1.6)
+  +media(lg)
+    font-size: calc(15px / 1.6)
+  +media(ipad)
+    font-size: calc(14px / 1.6)
+
+html
+  &.lenis, &.lenis body
+  height: auto
+.lenis.lenis
+  &-smooth
+    scroll-behavior: auto !important
+  &-smooth [data-lenis-prevent]
+    overscroll-behavior: contain
+  &-stopped
+    overflow: hidden
+  &-scrolling iframe
+    pointer-events: none
+
+body
+  margin: 0
+  padding: 0
+  font-size: 1.6rem
+  font-family: 'Noto Sans TC', sans-serif
+  font-weight: 400
+  // 字體去毛邊，因為IOS的字會比較糊
+  -webkit-font-smoothing: antialiased
+  letter-spacing: 0.1rem
+  line-height: 1.7
+  h1
+    color: var(--color-primary)
+
+/* ----------------------------------- */
+/* ------ Reset ------ */
+/* ----------------------------------- */
+a, button, input, label, select, textarea
+  // 防止手機雙點擊螢幕放大縮小
+  -ms-touch-action: manipulation
+  touch-action: manipulation
+
+a,button
+  display: block
+  text-decoration: none
+  color: inherit
+  // 禁止文字反白
+  user-select: none
+  &:hover
+    text-decoration: none
+    color: inherit    
+
+button
+  padding: 0
+  border: none
+  background: none
+
+img
+  max-width: 100%
+  
+ul,ol
+  list-style: none
+  margin: 0
+  padding: 0
+
+h1, h2, h3, h4, h5, h6, p, button
+  margin: 0
+  // 插件可能會影響
+  font-family: inherit
+  font-size: inherit
+  font-weight: inherit
+  line-height: inherit
+  color: inherit
+
+span
+  display: block
+  // 插件可能會影響
+  line-height: inherit
+
+.row
+  &.--gap
+    --bs-gutter-x: var(--spacing-16)
+    --bs-gutter-y: var(--spacing-16)
+  
+/* ----------------------------------- */
+/* ------ Layouts ------ */
+/* ----------------------------------- */
+
+section
+  --section-spacing-x: 8vw
+  padding: var(--spacing-120) var(--section-spacing-x)
+  +media(lg)
+    --section-spacing-x: 6vw
+
+.container
+  max-width: 132rem

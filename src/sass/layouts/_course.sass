@@ -1,0 +1,14 @@
+.l-course
+  padding: 0.5vh 0 25vh
+  &__slide
+    // 為了保持 flex stretch 特性，需取消插件預設 100%
+    height: auto
+    // 避免四邊陰影被吃掉
+    padding: 1rem
+
+  +media(xs)
+    &__swiper
+      padding: 1rem var(--spacing-16)
+    &__slide
+      width: 100% !important
+      

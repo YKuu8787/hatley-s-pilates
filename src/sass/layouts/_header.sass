@@ -1,0 +1,31 @@
+.l-header
+  padding: 7vw 4.4vw 0
+  &__banner
+    display: flex
+    justify-content: space-between
+  &__gotop
+    position: fixed
+    right: 4.4vw
+    bottom: var(--spacing-32)
+    color: var(--color-gray-60)
+    z-index: 999
+  &__scroll-down
+    margin-top: var(--spacing-32)
+    color: var(--color-gray-60)
+    text-align: center
+
+.l-banner
+  width: 100%
+  max-width: 136rem
+  &__img-mask
+    border-radius: 20px
+    overflow: hidden
+    &.--lg 
+      --img-w-ratio: 1.5
+      --img-h-ratio: 1
+    &.--md
+      --img-w-ratio: 1
+      --img-h-ratio: 1.52
+    &.--sm
+      --img-w-ratio: 2
+      --img-h-ratio: 1

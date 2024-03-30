@@ -1,0 +1,51 @@
+.l-about
+  &__title-lg
+    display: flex
+    justify-content: flex-end
+    padding-bottom: var(--spacing-32)
+    font-size: 4rem
+    font-weight: 600
+    letter-spacing: 0.5rem
+    font-family: 'Arimo', sans-serif
+    color: var(--color-primary)
+  &__container
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    letter-spacing: 0.5rem
+    &:nth-child(even)
+      flex-direction: row-reverse
+  &__container:nth-child(even) &__content-wrap
+    margin-right: 0
+    margin-left: 4vw
+  &__content-wrap
+    max-width: 72rem
+    margin-right: 4vw
+    padding: 30vh 0
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: var(--spacing-160) 0
+  &__img-wrap
+    display: flex
+    justify-content: center
+    flex-direction: column
+    position: sticky
+    position: -webkit-sticky
+    top: 0
+    flex-shrink: 0
+    width: 30rem
+    height: 100vh
+  &__img-mask
+    --img-w-ratio: 1
+    --img-h-ratio: 1.5
+    border-radius: 20px
+    overflow: hidden
+  &__span
+    letter-spacing: 0.5rem
+    font-weight: 400
+.--title-color
+  color: var(--color-primary)
+  padding-bottom: 1vw
+  font-weight: 500

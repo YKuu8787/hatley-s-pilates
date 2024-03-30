@@ -1,0 +1,65 @@
+.l-navbar
+  flex-shrink: 0
+  display: flex
+  flex-direction: column-reverse
+  justify-content: space-between
+  min-width: 16.8rem
+  font-weight: 500
+  letter-spacing: 0.3vw
+  &__burger
+    display: none
+    &.is-opened
+      
+  &__btn
+    margin-bottom: 0.4vw
+    border-bottom: 2px solid transparent
+    transition: color 0.3s
+    // 若 transition 設在 :hover 則只會有進去時的效果，若設在上一層，則進出都會有效果
+    &:hover
+      color: var(--color-primary)
+      &::after
+        width: 100%
+      // 滑鼠移入後，線條長度變成100%
+    &::after
+      content: ''
+      display: block
+      +size(0, 1.5px)
+      background-color: var(--color-primary-60)
+      transition: width 0.7s
+
+  &.is-fixed
+    display: flex
+    flex-direction: row
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    padding: 1vw 2vw
+    align-items: center
+    background-color: var(--color-gray-light)
+    z-index: 999
+  &.is-fixed &
+    &__logo-mask
+      width: 10rem
+    &__btn-box
+      display: flex
+      margin-left: auto
+      color: var(--color-gray)
+      letter-spacing: 0.3rem
+      font-family: 'Montserrat', sans-serif ,'Noto Sans HK', sans-serif
+      font-weight: 400
+    &__btn-wrap
+      padding: 0 1vw
+    &__burger
+      display: block
+
+
+//-----按鈕下方跑動底線-----
+// animation 通常在比較複雜，或是需要持續進行的動畫才會使用到
+// btn__wrap 的 padding 只會設左右，若設到上下那麼 hover 不碰到字也會出現效果
+// 滑鼠 hover 的效果簡單，只需要使用 before after
+// after 會在物體後出現，所以使用 after，設定 block（區塊元素），設定初始寬度為0 高度為1.5px，由於已被設定為方塊，所以設定背景顏色
+// 最後使用 transition: width 0.7s 來做寬度的過度效果
+// 如果在使用時有出現線條粗細被影響的狀況，就統一設整數的粗細
+
+//-----滾動顯現，新增class=.is-fixed-----
